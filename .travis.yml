@@ -19,3 +19,4 @@ deploy:
 branches:
   only:
   - master
+  - /^v.*$/
