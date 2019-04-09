@@ -13,7 +13,7 @@ deploy:
   provider: script
   script: bash dcker/push.sh "${REPO}" "${TRAVIS_BRANCH}"
   on:
-    # branch: master
+    branch: master
     tags: true
 
 branches:
