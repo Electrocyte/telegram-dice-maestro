@@ -5,6 +5,6 @@ set -euo pipefail
 # $1 Image repo
 # $2 Tag
 
-echo "${DOCKER_PASSWORD}" | docker login -u "${DOCKER_USERNAME}" --password-stdin
+echo "${DOCKER_PASSWORD}" | base64 -d | docker login -u "${DOCKER_USERNAME}" --password-stdin
 
 docker push "${1}:${2}"
