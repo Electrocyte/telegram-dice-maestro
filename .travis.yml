@@ -7,7 +7,6 @@ env:
   - REPO=lawliet89/telegram-dice-roller
 
 script:
-  # - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
   - bash docker/build.sh "${REPO}" "${TRAVIS_BRANCH}" "Dockerfile-pi3"
 
 deploy:
