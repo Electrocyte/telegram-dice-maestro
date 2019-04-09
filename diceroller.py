@@ -1,8 +1,9 @@
-from telegram.ext import Updater
+import os
 import logging
+from random import randint
+from telegram.ext import Updater
 from telegram.ext import CommandHandler, CallbackQueryHandler
 from telegram.ext import MessageHandler, Filters, CallbackContext
-from random import randint
 from telegram import InlineKeyboardButton, InlineKeyboardMarkup, Update
 
 ENTER_KEY = "ENTER"
