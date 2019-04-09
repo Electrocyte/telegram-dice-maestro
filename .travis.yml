@@ -1,0 +1,17 @@
+sudo: required
+services:
+  - docker
+language: bash
+
+env:
+  - REPO=lawliet89/telegram-dice-roller
+
+script:
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+
+deploy:
+  provider: script
+  script: bash build.sh "${REPO}" "${TRAVIS_BRANCH}" "Dockerfile-pi3"
+  on:
+    # branch: master
+    tags: true
