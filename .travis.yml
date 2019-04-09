@@ -7,12 +7,12 @@ env:
   - REPO=lawliet89/telegram-dice-roller
 
 script:
-  - bash build.sh "${REPO}" "${TRAVIS_BRANCH}" "Dockerfile-pi3"
   # - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+  - bash docker/build.sh "${REPO}" "${TRAVIS_BRANCH}" "Dockerfile-pi3"
 
 deploy:
   provider: script
-  script: bash build.sh "${REPO}" "${TRAVIS_BRANCH}" "Dockerfile-pi3"
+  script: bash dcker/push.sh "${REPO}" "${TRAVIS_BRANCH}"
   on:
     # branch: master
     tags: true
