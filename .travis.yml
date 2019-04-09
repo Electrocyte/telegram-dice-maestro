@@ -11,7 +11,7 @@ script:
 
 deploy:
   provider: script
-  script: bash dcker/push.sh "${REPO}" "${TRAVIS_BRANCH}"
+  script: bash docker/push.sh "${REPO}" "${TRAVIS_BRANCH}"
   on:
     branch: master
     tags: true
