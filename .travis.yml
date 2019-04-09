@@ -7,7 +7,8 @@ env:
   - REPO=lawliet89/telegram-dice-roller
 
 script:
-  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+  - echo "Hi"
+  # - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
 
 deploy:
   provider: script
@@ -15,3 +16,7 @@ deploy:
   on:
     # branch: master
     tags: true
+
+branches:
+  only:
+  - master
