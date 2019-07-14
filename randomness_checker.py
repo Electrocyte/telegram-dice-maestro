@@ -14,5 +14,5 @@ def yeenoghu(no_dice_sides, no_of_dice):
 values = "\n".join(map(str, yeenoghu(20, 20000)))
 print(values)
 
-with open("yeenoghu.txt", "w") as text_file:
+with open("yeenoghu_my_pc.txt", "w") as text_file:
     text_file.write(values)
