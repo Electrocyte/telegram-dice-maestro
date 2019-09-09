@@ -1,6 +1,7 @@
 import os
 import logging
-from random import randint
+import random
+
 from telegram.ext import Updater
 from telegram.ext import CommandHandler, CallbackQueryHandler
 from telegram.ext import MessageHandler, Filters, CallbackContext
@@ -19,6 +20,7 @@ SIDES_STATE = 1
 MODIFIER_STATE = 2
 DONE_STATE = 3
 
+SYSTEM_RANDOM = random.SystemRandom()
 
 class DiceRollerBuilder:
     def __init__(self):
@@ -159,7 +161,7 @@ def roll_dice(no_of_dice, no_dice_sides, modifier):
     # Limit number of dice roll to something sane
     no_of_dice = min(20, no_of_dice)
     no_dice_sides = min(10000, no_dice_sides)
-    rolls = [randint(1, no_dice_sides) for _ in range(no_of_dice)]
+    rolls = [SYSTEM_RANDOM.randint(1, no_dice_sides) for _ in range(no_of_dice)]
 
     if modifier > 0:
         modifier_text = f"+{modifier}"
