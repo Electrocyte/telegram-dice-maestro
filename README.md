@@ -21,7 +21,9 @@ services:
 ```
 
 ## Example Docker
-export your telegram API token with `export TELEGRAM_TOKEN="Your token"`
+
+Export your telegram API token with `export TELEGRAM_TOKEN="Your token"`
+
 ```
 docker run --name telegram_dice_bot -e TELEGRAM_TOKEN telegram_dice_roller:latest
 ```
