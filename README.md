@@ -27,4 +27,5 @@ Export your telegram API token with `export TELEGRAM_TOKEN="Your token"`
 ```
 docker run --name telegram_dice_bot -e TELEGRAM_TOKEN telegram_dice_roller:latest
 ```
+
 If you want to build the container locally you can use `docker build -t telegram_dice_roller .`
